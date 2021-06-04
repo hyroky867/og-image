@@ -128,8 +128,8 @@ const Toast = ({ show, message }: ToastProps) => {
 };
 
 const themeOptions: DropdownOption[] = [
-  { text: "Light", value: "light" },
-  { text: "Dark", value: "dark" },
+  { text: "Black", value: "black" },
+  { text: "White", value: "white" },
 ];
 
 const fileTypeOptions: DropdownOption[] = [
@@ -274,17 +274,11 @@ const App = (_: any, state: AppState, setState: SetState) => {
       H(
         "div",
         H(Field, {
-          label: "Theme",
+          label: "text color",
           input: H(Dropdown, {
             options: themeOptions,
             value: theme,
-            onchange: (val: Theme) => {
-              const options =
-                val === "light" ? imageLightOptions : imageDarkOptions;
-              let clone = [...images];
-              clone[0] = options[selectedImageIndex].value;
-              setLoadingState({ theme: val, images: clone });
-            },
+            onchange: (val: Theme) => setLoadingState({ theme: val }),
           }),
         }),
         H(Field, {
