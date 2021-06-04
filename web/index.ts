@@ -234,7 +234,7 @@ const App = (_: any, state: AppState, setState: SetState) => {
     fontSize = "100px",
     theme = "light",
     md = true,
-    text = "**Hello** World",
+    text = "**ヴァーセル** オープングラフ・イメージ",
     images = [imageLightOptions[0].value],
     widths = [],
     heights = [],
